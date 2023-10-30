@@ -13,15 +13,17 @@ main:
     ldi r24, lo8(font)
     call SetFontTable
 
-    ; set a font tile at (1, 1)
-    ldi r24, 1   ; X position
-    ldi r22, 1   ; Y position
-    ldi r20, 'a' ; character
-    call SetFont
+    ; print a string at (1, 1)
+    ldi r24, 1 ; X position
+    ldi r22, 1 ; Y position
+    ldi r21, hi8(string)
+    ldi r20, lo8(string)
+    call Print
 
 loop:
     rjmp loop
 
 font:
-    .skip 32 * 6 * 8
     .incbin "font.bin"
+
+string: .asciz "hello uzebox world :3"
