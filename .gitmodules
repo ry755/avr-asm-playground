@@ -1,0 +1,3 @@
+[submodule "uzebox/kernel-tools"]
+	path = uzebox/kernel-tools
+	url = https://github.com/Uzebox/uzebox
